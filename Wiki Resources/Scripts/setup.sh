@@ -7,4 +7,4 @@ jupyter nbextension enable collapsible_headings/main
 jupyter nbextension enable varInspector/main
 jupyter nbextension enable toc2/main
 
-jupyter notebook --no-browser --ip=0.0.0.0 --port=8887 --allow-root --NotebookApp.token= --notebook-dir='/storage'
+jupyter notebook --no-browser --ip=0.0.0.0 --port=8887 --allow-root --NotebookApp.token= --notebook-dir='/storage' &
