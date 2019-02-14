@@ -35,7 +35,7 @@ These steps will only need to be performed once.
 ### Steps
 1) SSH into the GPU rack
 2) Run the following command (inside the rack):
-nvidia-docker run --shm-size=128g -v <storage location you want to use on rack>:<storage location inside the docker container> --ulimit memlock=<maximum memory (RAM) allocation> -it -p <port number>:<port number> --ipc=host <docker image, e.g. ufoym/deepo:all-py36-jupyter> [Optional] bash <your bash shell script>
+nvidia-docker run --shm-size=128g -v \<storage location you want to use on rack\>:\<storage location inside the docker container\> --ulimit memlock=\<maximum memory (RAM) allocation\> -it -p \<port number\>:\<port number\> --ipc=host <docker image, e.g. ufoym/deepo:all-py36-jupyter> [Optional] bash <your bash shell script>
 
 E.g.:
 nvidia-docker run --shm-size=128g -v /home/gus/storage/:/storage --ulimit memlock=32 -it -p 8888:8888 --ipc=host ufoym/deepo:all-py36-jupyter bash ./storage/setup.sh
