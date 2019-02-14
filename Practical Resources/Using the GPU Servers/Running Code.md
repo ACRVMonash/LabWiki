@@ -23,7 +23,7 @@ Just run a command based on 'docker run' and pass it some arguments. We'll go th
 ## Gus' Quick Start Guide
 In this section, we'll present a way you can connect to a docker environment in a way that will allow you to write and run code inside. In order to simplify the writing and running code part, we'll use a broswer based IDE called 'jupyter' <TODO LINK TO JUPYTERGUIDE>.
 
-<TODO DRAW AND LINK IMAGE>
+![alt text](running_code_1.png)
 
 ### Setup
 These steps will only need to be performed once. 
