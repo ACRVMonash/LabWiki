@@ -35,13 +35,13 @@ These steps will only need to be performed once.
 ### Steps
 1) SSH into the GPU rack
 2) Run the following command (inside the rack):
-nvidia-docker run --shm-size=128g -v \<storage location you want to use on rack\>:\<storage location inside the docker container\> --ulimit memlock=\<maximum memory (RAM) allocation\> -it -p \<port number\>:\<port number\> --ipc=host <docker image, e.g. ufoym/deepo:all-py36-jupyter> [Optional] bash <your bash shell script>
+nvidia-docker run --shm-size=128g -v \<storage location you want to use on rack\>:\<storage location inside the docker container\> --ulimit memlock=\<maximum memory (RAM) allocation\> -it -p \<port number\>:\<port number\> --ipc=host \<docker image, e.g. ufoym/deepo:all-py36-jupyter\> [Optional] bash \<your bash shell script\>
 
 E.g.:
 nvidia-docker run --shm-size=128g -v /home/gus/storage/:/storage --ulimit memlock=32 -it -p 8888:8888 --ipc=host ufoym/deepo:all-py36-jupyter bash ./storage/setup.sh
 
 3) Run Jupyter
-jupyter notebook --no-browser --ip=0.0.0.0 --port=<port number> --allow-root --NotebookApp.token= --notebook-dir=<storage location inside the docker container>
+jupyter notebook --no-browser --ip=0.0.0.0 --port=\<port number\> --allow-root --NotebookApp.token= --notebook-dir=\<storage location inside the docker container\>
 
 E.g.:
 jupyter notebook --no-browser --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token= --notebook-dir='/storage'
@@ -49,12 +49,12 @@ jupyter notebook --no-browser --ip=0.0.0.0 --port=8888 --allow-root --NotebookAp
 Note: You can also just put this line inside of your setup script to make things even faster
 
 4) Create an SSH link between your local machine and the GPU rack:
-ssh -L <port number>:0.0.0.0:<port number> <GOU rack IP>
+ssh -L \<port number\>:0.0.0.0:\<port number\> \<GPU rack IP\>
 
 E.g.:
 ssh -L 8888:0.0.0.0:8888 130.194.248.70
 
-5) Finally, open a browser and go to http://localhost:<port number>/. You should have a jupyter instance linking to a kernel running inside the docker conatiner on the rack! 
+5) Finally, open a browser and go to http://localhost:\<port number\>/. You should have a jupyter instance linking to a kernel running inside the docker conatiner on the rack! 
 
 ### This Seems Comlicated!
 Maybe so. You can simplify these steps using bash aliases and including the command to run jupyter in your setup script.
