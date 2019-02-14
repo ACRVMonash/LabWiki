@@ -60,7 +60,7 @@ E.g.:
 
 `ssh -L 8888:0.0.0.0:8888 130.194.248.70`
 
-5) Finally, open a browser and go to http://localhost:\<port number\>/. You should have a jupyter instance linking to a kernel running inside the docker conatiner on the rack! 
+5) Finally, open a browser and go to http://localhost:<port number\>/. You should have a jupyter instance linking to a kernel running inside the docker conatiner on the rack! 
 
 ### This Seems Comlicated!
 Maybe so. You can simplify these steps using bash aliases and including the command to run jupyter in your setup script.
