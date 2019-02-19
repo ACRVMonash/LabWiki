@@ -1,7 +1,13 @@
+#Print container ID
+hostname=$(cat /etc/hostname)
+echo $hostname
+
 #Pip
 pip install --upgrade pip
 pip install tqdm jupyter_contrib_nbextensions
-pip install --upgrade pytorch #Update pytorch
+#Update pytorch
+pip install numpy torchvision_nightly
+pip install torch_nightly -f https://download.pytorch.org/whl/nightly/cu90/torch_nightly.html
 
 #OpenAI Gym
 #pip install gym
